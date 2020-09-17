@@ -1,0 +1,26 @@
+<div id="myDIV" class="header">
+    <h2>My To Do List</h2>
+    <input type="text" id="myInput" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myli">
+</ul>
+
+
+<script>
+    function newElement(){
+       let plusli = document.createElement('li')
+       plusli.innerText = document.getElementById("myInput").value
+       let Xbtn = document.createElement('span')
+       Xbtn.innerText = 'X'
+       Xbtn.addEventListener('click',delElement)
+       document.getElementById("myli").appendChild(plusli).appendChild(Xbtn) 
+    }
+    function delElement(){
+        this.parentNode.remove()
+    }
+</script>
+
+
+
